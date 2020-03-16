@@ -199,10 +199,10 @@ look what i found on google! 😂.`,
                 for(var i=0; i<spacy_doc.length;i++){
                     console.log(spacy_doc[i])
                     if(spacy_doc[i].length){
-                        train_data += `("${docs[i]}", [ ${spacy_doc[i].join(', ')} ])\n`;
+                        train_data += `("${docs[i]}", {"entities": [ ${spacy_doc[i].join(', ')} ]})\n`;
                     }
                     else{
-                        train_data += `("${docs[i]}", [ ])\n`;
+                        train_data += `("${docs[i]}", {"entities": [ ]})\n`;
                     }
 
                 }
